@@ -62,7 +62,27 @@ const pausa = async() => {
     return await inquirer.prompt(inputPausa);
 }
 
+const leerInput =  async(message) => {
+    const question = [
+        {
+            type: 'input',
+            name: 'desc',
+            message,//Hace referencia al parametro recibido ECMAScript
+            validate( value ){//Creando funcion de validación dentro del objeto
+                if( value.length === 0){//En el caso de que no se reciba ningun valor
+                    return 'Por favor ingrese un valor';
+                }
+                return true;
+            }
+        }
+    ];
+    //Utilizamos el inquirer para imprimir un mensaje y recibir una descripcion de tarea
+    const {desc} = await inquirer.prompt(question);
+    return desc;//Retornamos la descripcion recibida por el usuario
+}
+
 module.exports = {
     menuInquirer,
-    pausa
+    pausa,
+    leerInput
 }
