@@ -9,31 +9,31 @@ const menuOpts = [
         choices: [
             {
                 value: '1',
-                name: `${'1.-'.magenta} Crear tarea`
+                name: `${'1.-'.green} Crear tarea`
             },
             {
                 value: '2',
-                name: `${'2.-'.magenta} Listar tarea`
+                name: `${'2.-'.green} Listar tarea`
             },
             {
                 value: '3',
-                name: `${'3.-'.magenta} Listar tareas completadas`
+                name: `${'3.-'.green} Listar tareas completadas`
             },
             {
                 value: '4',
-                name: `${'4.-'.magenta} Listar  tareas pendientes`
+                name: `${'4.-'.green} Listar  tareas pendientes`
             },
             {
                 value: '5',
-                name: `${'5.-'.magenta} Completar tareas`
+                name: `${'5.-'.green} Completar tareas`
             },
             {
                 value: '6',
-                name: `${'6.-'.magenta} Borrar tarea`
+                name: `${'6.-'.green} Borrar tarea`
             },
             {
                 value: '0',
-                name: `${'0.-'.magenta} Salir\n`
+                name: `${'0.-'.green} Salir\n`
             }
         ]
     }
@@ -50,9 +50,9 @@ const inputPausa = [
 const menuInquirer = async( ) => {
     
         console.clear();
-        console.log('========================'.magenta);
-        console.log('  Selecione una opción'.magenta);
-        console.log('========================'.magenta);
+        console.log('========================'.red);
+        console.log('  Selecione una opción'.black);
+        console.log('========================\n'.red);
 
         const {opcion} = await inquirer.prompt(menuOpts);
         return opcion;

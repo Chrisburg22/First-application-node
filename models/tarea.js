@@ -4,7 +4,7 @@ const {v4: uuidv4} = require('uuid');
 class Tarea {
     id   = '';
     desc = '';
-    compladoEn = null; // Si es diferente a null la tarea esta terminada
+    completadoEn = null; // Si es diferente a null la tarea esta terminada
 
     constructor( desc ){
         this.id=uuidv4();           
