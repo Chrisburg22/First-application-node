@@ -27,6 +27,13 @@ class Tareas{
         this._listado = {};
     }
 
+    borrarTarea( id = ''){
+        
+        if( this._listado){
+            delete this._listado[id];
+        }
+    }
+
     //Instancia de tareas a partir de un array de objetos
     cargarTareasFromArray( tareas=[] ){
         tareas.forEach( ( tarea ) => {
@@ -75,7 +82,7 @@ class Tareas{
                 if(completadoEn){
                     const idx = `${cont}`.green;
                     const estado = 'Completada'.green;
-                    console.log(`${idx} ${desc} :: ${estado}`);
+                    console.log(`${idx} ${desc} :: ${completadoEn.blue}`);
                     cont++;
                 }
                 
@@ -98,6 +105,24 @@ class Tareas{
 
         }
     }
+
+    toggleCompletadas( ids = [] ){
+
+        ids.forEach( id => {
+            const tarea = this._listado[id];
+            if(!tarea.completadoEn){
+                tarea.completadoEn = new Date().toISOString();//Le agrega un nuevo tipo de dato fecha a la propiedad completadoEn
+            }
+        });
+
+        this.listadoArr.forEach( tarea => {
+            if( !ids.includes(tarea.id) ){ // Si en el arreglo arreglo de ids no existe la tarea.id
+                this._listado[tarea.id].completadoEn = null;
+            }
+        });
+    }
+
+
 
 }
 module.exports = Tareas;
