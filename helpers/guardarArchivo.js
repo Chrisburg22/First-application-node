@@ -13,7 +13,9 @@ if( !fs.existsSync(archivo) ){
     }
 
    //Lee el archivo y guarda su contenido en la variable info
-    const info = fs.readFileSync( archivo );
+    const info = fs.readFileSync( archivo, options = {
+        encoding: 'utf-8'
+    });
    //Tranforma el string info a un array de objetos con JSON.parse 
     const data = JSON.parse( info );
 

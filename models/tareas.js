@@ -16,7 +16,7 @@ class Tareas{
         
         const listado = [];
         //Llenado del arreglo 
-        Object.keys(this._listado).forEach( key => {//El jey retorna un arreglo y sobre ese arreglo utilizamos la función forEach para recorrer el arreglo 
+        Object.keys(this._listado).forEach( key => {//El key retorna un arreglo y sobre ese arreglo utilizamos la función forEach para recorrer el arreglo 
             const tarea = this._listado[key];//La lleva e la utilizo para saber cual es la tera que tengo e inserlarla en la variable tarea. Extraigo la clase que ya esta ahi instanciada
             listado.push( tarea ); //Lleno el arreglo con las tareas
         });
